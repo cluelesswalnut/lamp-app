@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Image, Linking, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import { ColorPicker } from 'react-native-color-picker';
 
 export const PhoneInput = () => {
 	// TODO you don't need <string> here, it will be inferred automatically
@@ -34,28 +33,25 @@ export const PhoneInput = () => {
 	};
 
 	return (
-		<>
-			<View style={styles.container}>
-				<Text style={styles.instructions}>Enter 5 digit OSU number</Text>
-				<View style={styles.textInputParent}>
-					<TextInput
-						placeholder={'Enter number here'}
-						style={styles.textInput}
-						keyboardType='numeric'
-						onChangeText={setInputNumber}
-						value={inputNumber}
-						autoFocus={true}
-					/>
-					<TouchableOpacity style={styles.clearButtonParent} onPress={() => setInputNumber('')}>
-						<Image style={styles.clearButton} source={require('../assets/icon.png')} />
-					</TouchableOpacity>
-				</View>
-				<TouchableOpacity onPress={call} style={styles.button}>
-					<Text style={styles.buttonText}>Call</Text>
+		<View style={styles.container}>
+			<Text style={styles.instructions}>Enter 5 digit OSU number</Text>
+			<View style={styles.textInputParent}>
+				<TextInput
+					placeholder={'Enter number here'}
+					style={styles.textInput}
+					keyboardType='numeric'
+					onChangeText={setInputNumber}
+					value={inputNumber}
+					autoFocus={true}
+				/>
+				<TouchableOpacity style={styles.clearButtonParent} onPress={() => setInputNumber('')}>
+					<Image style={styles.clearButton} source={require('../assets/icon.png')} />
 				</TouchableOpacity>
 			</View>
-			<ColorPicker oldColor='#fbb' onColorSelected={color => alert(`Color selected: ${color}`)} style={{ flex: 1 }} />
-		</>
+			<TouchableOpacity onPress={call} style={styles.button}>
+				<Text style={styles.buttonText}>Call</Text>
+			</TouchableOpacity>
+		</View>
 	);
 };
 
