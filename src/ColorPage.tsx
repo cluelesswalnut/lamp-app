@@ -8,7 +8,6 @@ export const ColorPage = () => {
 	return (
 		<>
 			<TriangleColorPicker oldColor='#fbb' onColorSelected={color => alert(`Color selected: ${color}`)} style={{ flex: 1 }} />
-			<Button title='Go to Phone' onPress={() => navigation.navigate('Phone')} />
 		</>
 	);
 };
