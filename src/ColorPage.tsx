@@ -12,6 +12,20 @@ const styles = StyleSheet.create({
 	},
 });
 
+function testPost(color: string) {
+	return fetch('https://lamp-lamp.herokuapp.com/lamp/setcolor', {
+		method: 'POST',
+		headers: {
+			Accept: 'application/json',
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify({
+			id: 'amanda',
+			color: color,
+		}),
+	});
+}
+
 export const ColorPage = () => {
 	const navigation = useNavigation();
 	return (
@@ -26,7 +40,7 @@ export const ColorPage = () => {
 	  	<Text> Amanda's Lamp </Text>
 		</View>
 
-				<TriangleColorPicker defaultColor='#000080' oldColor='#D40DB3' onColorSelected={color => alert(`Color selected: ${color}`)} style={{ flex: 5 }} />
+				<TriangleColorPicker defaultColor='#000080' oldColor='#D40DB3' onColorSelected={(color) => testPost(color)} style={{ flex: 5 }} />
 		</>
 	);
 };
