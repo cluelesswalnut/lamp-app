@@ -6,7 +6,7 @@ export const DurationPage = () => {
 
 	return (
 		<View style={styles.container}>
-			<Text style={styles.instructions}>Enter lanp on Duration</Text>
+			<Text style={styles.instructions}>Enter lamp on Duration</Text>
 			<View style={styles.textInputParent}>
 				<TextInput
 					placeholder={'Enter minutes here'}
